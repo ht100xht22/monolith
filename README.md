@@ -33,3 +33,28 @@ minikube tunnel
 kubectl expose deployment monolith --name=monolith-service --port=8080 --target-port=8080 --type=LoadBalancer
 ```
 6. Get the external ip and browse to `<external-ip>/hello`
+
+
+## Kubernetes with KIND (Kubernetes-in-Docker)
+1. Install KIND.
+2. Start a KIND cluster.
+```bash
+kind create cluster
+```
+3. Create a deployment of your docker image.
+```bash
+kubectl create deployment monolith --image=arifjo/ht100x-monolith
+```
+4. Expose the deployment service.
+```bash
+kubectl expose deployment monolith --name=monolith-service --port=8080 --target-port=8080 --type=NodePort
+```
+5. Find the Internal IP
+```bash
+kubectl get nodes -o wide
+```
+6. Find the PORT.
+```bash
+kubectl get service monolith-service
+```
+7. Broswe to `<internal-ip>:<external-port>`
