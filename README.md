@@ -3,7 +3,7 @@
 ## Before you start
 1. Create a Docker image of the maven application. Run the script below.
 ```bash
-./mvnw clean spring-boot:build-image
+./mvnw clean spring-boot:build-image -Dspring-boot.build-image.imageName=ht100x/monolith
 ```
 2. Tag your builed image. Run the script below
 ```bash
