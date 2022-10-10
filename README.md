@@ -57,9 +57,9 @@ imagePullPolicy: Never
 ```bash
 kubectl apply -f deployment.yaml
 ```
-7. Expose the deployment service.
+7. Expose the deployment service. (Also possible to use `--type=NodePort`)
 ```bash
-kubectl expose deployment monolith --name=monolith-service --port=8080 --target-port=8080 --type=NodePort
+kubectl expose deployment monolith --name=monolith-service --port=8080 --target-port=8080 --type=LoadBalancer
 ```
 8. Find the Internal IP
 ```bash
