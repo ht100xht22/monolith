@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"
+    >
+    <title>Profile</title>
+</head>
+<body>
+<label>
+    Name: <p th:text="${person.getName()}"></p>
+</label>
+<label>
+    Email: <p th:text="${person.getEmail()}"></p>
+</label>
+<label>Phone Number:<p th:text="${person.getPhoneNumber()}"></p></label>
+
+</body>
+</html>
