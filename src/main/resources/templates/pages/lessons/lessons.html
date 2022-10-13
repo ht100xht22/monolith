@@ -9,6 +9,45 @@
 
 <h1>Lessons</h1>
 
+<form action="#" th:action="@{''}" th:object="${form}" method="post">
+
+    <label>
+        From:
+        <input type="date" name="from"/>
+    </label>
+    <label>
+        To:
+        <input type="date" name="to"/>
+    </label>
+    <label>
+        Type:
+        <select id="lesson_type" name="type">
+            <option selected>All</option>
+            <option value="Individual">Individual</option>
+            <option value="Ensemble">Ensemble</option>
+            <option value="Group">Group</option>
+        </select>
+    </label>
+    <label>
+        Level:
+        <select id="lesson_level" name="level">
+            <option selected>All</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+    </label>
+    <label>
+        Genre:
+        <select id="lesson_genre" name="genre">
+            <option selected>N/A</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Punk">Punk</option>
+            <option value="Rock">Rock</option>
+        </select>
+    </label>
+    <button type="submit">Filter</button>
+</form>
 <table>
     <thead>
     <tr>
@@ -16,6 +55,7 @@
         <td>Time</td>
         <td>Type</td>
         <td>Level</td>
+        <td>Instrument</td>
         <td>Genre</td>
         <td>Book</td>
     </tr>
@@ -23,7 +63,7 @@
     <tbody>
     <tr th:each="lesson : ${lessons}">
         <td th:text="${lesson.getFrom()}"></td>
-        <td th:text="${lesson.getTo()}"></td>
+        <td th:text="${lesson.getTime()}"></td>
         <td th:text="${lesson.getType()}"></td>
         <td th:text="${lesson.getLevel()}"></td>
         <td th:text="${lesson.getInstrument()}"></td>

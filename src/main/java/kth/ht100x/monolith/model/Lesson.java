@@ -6,15 +6,15 @@ import java.time.LocalTime;
 public class Lesson {
 
     private final LocalDate from;
-    private final LocalTime to;
+    private final LocalTime time;
     private final String level;
     private final String instrument;
     private final String genre;
     private final String type;
 
-    public Lesson(LocalDate from, LocalTime to, String type, String level, String instrument, String genre) {
+    public Lesson(LocalDate from, LocalTime time, String type, String level, String instrument, String genre) {
         this.from = from;
-        this.to = to;
+        this.time = time;
         this.type = type;
         this.level = level;
         this.instrument = instrument;
@@ -25,8 +25,8 @@ public class Lesson {
         return from;
     }
 
-    public LocalTime getTo() {
-        return to;
+    public LocalTime getTime() {
+        return time;
     }
 
     public String getType() {
