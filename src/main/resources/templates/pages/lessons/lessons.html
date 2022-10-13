@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+</head>
+<body>
+
+<h1>Lessons</h1>
+
+<table>
+    <thead>
+    <tr>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Type</td>
+        <td>Level</td>
+        <td>Genre</td>
+        <td>Book</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="lesson : ${lessons}">
+        <td th:text="${lesson.getFrom()}"></td>
+        <td th:text="${lesson.getTo()}"></td>
+        <td th:text="${lesson.getType()}"></td>
+        <td th:text="${lesson.getLevel()}"></td>
+        <td th:text="${lesson.getInstrument()}"></td>
+        <td th:text="${lesson.getGenre()}"></td>
+        <td>
+            <button type="button">Book lesson</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
