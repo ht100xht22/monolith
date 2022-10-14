@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping(path = "")
 public class MonolithController {
 
-    @GetMapping(path = "/hello")
-    public String hello(@RequestParam(name = "name", defaultValue = "World") String name, Model model) {
-        model.addAttribute("name", name);
-        return "/pages/hello";
+    @GetMapping(path = "")
+    public String index() {
+        return "pages/index";
     }
 }
