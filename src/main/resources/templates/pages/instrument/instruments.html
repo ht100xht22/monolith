@@ -6,10 +6,10 @@
     <title>Instruments</title>
 </head>
 <body>
-<form>
+<form action="#" method="post" th:action="@{''}" th:object="${form}">
     <label>
         Instrument:
-        <input name="instrument_type" type="text">
+        <input name="type" th:field="*{type}" type="text">
     </label>
     <button type="submit">Filter</button>
 </form>

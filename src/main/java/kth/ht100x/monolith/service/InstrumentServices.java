@@ -1,6 +1,7 @@
 package kth.ht100x.monolith.service;
 
 import kth.ht100x.monolith.model.Instruments;
+import kth.ht100x.monolith.model.from.InstrumentFilterFrom;
 import kth.ht100x.monolith.repository.InstrumentsRepository;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,10 @@ public class InstrumentServices {
                 .collect(Collectors.toList());
     }
 
+    public List<Instruments> findInstrumentsByType(InstrumentFilterFrom form) {
+        List<Instruments> instruments = instrumentsRepository.findAll();
+        instruments = instruments.stream().filter(instruments1 -> form.getType().equalsIgnoreCase("") || instruments1.getType().equalsIgnoreCase(form.getType())).collect(Collectors.toList());
+        return instruments;
+    }
 
 }
