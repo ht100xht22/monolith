@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+          xmlns:th="http://www.thymeleaf.org">
+    <title>Instruments</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <td>Id</td>
+        <td>Type</td>
+        <td>Brand</td>
+        <td>Date</td>
+        <td>Price</td>
+        <td>Status</td>
+        <td>Rented by Who</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="instruments : ${instruments}">
+        <td th:text="${instruments.getId()}"></td>
+        <td th:text="${instruments.getType()}"></td>
+        <td th:text="${instruments.getBrand}"></td>
+        <td th:text="${instruments.getDate}"></td>
+        <td th:text="${instruments.getPrice}"></td>
+        <td th:text="${instruments.getStatus}"></td>
+        <td th:text="${instruments.getRentedByWho}"></td>
+
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
