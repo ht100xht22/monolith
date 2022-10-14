@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"
-          xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
     <title>Profiles</title>
 </head>
 <body>
@@ -10,15 +9,15 @@
     <thead>
     <tr>
         <td>Name</td>
-        <td>Email</td>
-
+        <td>Age</td>
+        <td>Skill</td>
     </tr>
     </thead>
     <tbody>
     <tr th:each="person : ${persons}">
-        <td><a th:href="@{profiles/{id}(id=${person.getId})}" th:text="${person.getName()}"></a></td>
-        <td th:text="${person.getEmail()}"></td>
-
+        <td th:text="${person.getName()}"></td>
+        <td th:text="${person.getAge()}"></td>
+        <td th:text="${person.getSkill()}"></td>
     </tr>
     </tbody>
 </table>
