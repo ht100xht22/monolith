@@ -1,43 +1,25 @@
 package kth.ht100x.monolith.model;
 
 public class Person {
+    private final String name;
+    private final Integer age;
+    private final String skill;
 
-
-    private final int id;
-    private final String fName;
-    private final String lName;
-    private final String email;
-    private final String phoneNumber;
-
-    public Person(int id, String fName, String lName, String email, String phoneNumber) {
-        this.id = id;
-        this.fName = fName;
-        this.lName = lName;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getfName() {
-        return fName;
-    }
-
-    public String getlName() {
-        return lName;
+    public Person(String name, Integer age, String skill) {
+        this.name = name;
+        this.age = age;
+        this.skill = skill;
     }
 
     public String getName() {
-        return getfName() + " " + getlName();
+        return name;
     }
 
-    public String getEmail() {
-        return email;
+    public Integer getAge() {
+        return age;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getSkill() {
+        return skill;
     }
 }
