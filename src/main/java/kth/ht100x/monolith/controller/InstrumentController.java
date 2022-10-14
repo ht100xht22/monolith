@@ -22,15 +22,9 @@ public class InstrumentController {
 
     @GetMapping(path = "")
     public String findAllInsturments(Model model) {
-
-
         List<Instruments> instruments = instrumentServices.findAllInstruments();
         model.addAttribute("instruments", instruments);
-        //instruments.add(new Instruments(1, "piano", "casio", "2022-10-14", 200, Boolean.TRUE, "N/A"));
-
-
         return "pages/instrument/instruments";
     }
-
-
+    
 }

@@ -18,12 +18,11 @@ public class InstrumentServices {
     }
 
     public List<Instruments> findAllInstruments() {
-
         List<Instruments> instruments = instrumentsRepository.findAll();
-
-
         return instruments.stream()
                 .sorted(Comparator.comparing(Instruments::getBrand))
                 .collect(Collectors.toList());
     }
+
+
 }

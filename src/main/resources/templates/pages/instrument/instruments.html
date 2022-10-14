@@ -6,27 +6,34 @@
     <title>Instruments</title>
 </head>
 <body>
+<form>
+    <label>
+        Instrument:
+        <input name="instrument_type" type="text">
+    </label>
+    <button type="submit">Filter</button>
+</form>
+
 <table>
     <thead>
     <tr>
-        <td>Id</td>
+
         <td>Type</td>
         <td>Brand</td>
-        <td>Date</td>
+
         <td>Price</td>
-        <td>Status</td>
-        <td>Rented by Who</td>
+
     </tr>
     </thead>
     <tbody>
     <tr th:each="instruments : ${instruments}">
-        <td th:text="${instruments.getId()}"></td>
         <td th:text="${instruments.getType()}"></td>
         <td th:text="${instruments.getBrand}"></td>
-        <td th:text="${instruments.getDate}"></td>
         <td th:text="${instruments.getPrice}"></td>
-        <td th:text="${instruments.getStatus}"></td>
-        <td th:text="${instruments.getRentedByWho}"></td>
+
+        <td>
+            <button name="rent"> Rent</button>
+        </td>
 
     </tr>
     </tbody>
