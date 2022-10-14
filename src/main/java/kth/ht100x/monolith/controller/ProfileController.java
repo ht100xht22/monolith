@@ -5,6 +5,7 @@ import kth.ht100x.monolith.service.ProfileService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -24,5 +25,14 @@ public class ProfileController {
         List<Person> persons = profileService.findAll();
         model.addAttribute("persons", persons);
         return "/pages/profile/profiles";
+    }
+
+    @GetMapping(path = "/{id}")
+    public String profile(@PathVariable Long id, Model model) {
+        Person person = profileService.findOneById(id);
+        model.addAttribute("person", person);
+
+
+        return "/pages/profile/profile";
     }
 }
