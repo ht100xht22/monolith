@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking form</title>
+</head>
+<body>
+<section id="content">
+    <h1>Booking lesson</h1>
+    <form action="#" th:action="@{''}" th:object="${form}" method="post">
+        <div id="lesson">
+            <h2>Lesson information</h2>
+            <label>
+                Date:
+                <input type="date" th:value="${lesson.getFrom()}" readonly/>
+            </label>
+            <label>
+                Time:
+                <input type="time" th:value="${lesson.getTime()}" readonly/>
+            </label>
+            <label>
+                Type:
+                <input type="text" th:value="${lesson.getType()}" readonly/>
+            </label>
+            <label>
+                Level:
+                <input type="text" th:value="${lesson.getLevel()}" readonly/>
+            </label>
+            <label>
+                <input type="text" th:value="${lesson?.getInstrument()}" readonly/>
+            </label>
+            <label>
+                Genre:
+                <input type="text" th:value="${lesson?.getGenre()}" readonly/>
+            </label>
+        </div>
+        <div id="student">
+            <h2>Student information</h2>
+            <label>
+                Name:
+                <input type="text" th:value="${person.getName()}" readonly/>
+            </label>
+            <label>
+                Email:
+                <input type="text" th:value="${person.getEmail()}" readonly/>
+            </label>
+            <label>
+                Phone number:
+                <input type="tel" th:value="${person.getPhoneNumber()}" readonly/>
+            </label>
+        </div>
+        <button type="submit">Submit booking</button>
+    </form>
+</section>
+</body>
+</html>
