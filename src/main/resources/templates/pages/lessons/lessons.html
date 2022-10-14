@@ -69,7 +69,9 @@
         <td th:text="${lesson.getInstrument()}"></td>
         <td th:text="${lesson.getGenre()}"></td>
         <td>
-            <button type="button">Book lesson</button>
+            <button type="button">
+                <a th:href="@{bookings/new(lesson=${lesson.getId()},student=1)}">Book lesson</a>
+            </button>
         </td>
     </tr>
     </tbody>

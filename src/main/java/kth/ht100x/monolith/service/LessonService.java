@@ -27,4 +27,8 @@ public class LessonService {
                 .filter(lesson -> form.getGenre().equalsIgnoreCase("N/A") || lesson.getGenre().equalsIgnoreCase(form.getGenre()))
                 .collect(Collectors.toList());
     }
+
+    public Lesson findOneById(String lessonId) {
+        return lessonRepository.findOneById(lessonId);
+    }
 }
