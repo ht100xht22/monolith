@@ -36,5 +36,6 @@ public class BookingService {
         Lesson lesson = findLessonById(lessonId);
         Person person = findStudentById(studentId);
         bookingRepository.save(lesson, person);
+        lessonService.update(lessonId, person);
     }
 }
