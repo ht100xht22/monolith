@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lessons</title>
+</head>
+<body>
+
+<h1>Lessons</h1>
+
+<form action="#" th:action="@{''}" th:object="${form}" method="post">
+
+    <label>
+        From:
+        <input type="date" name="from" th:field="*{from}"/>
+    </label>
+    <label>
+        To:
+        <input type="date" name="to" th:field="*{to}"/>
+    </label>
+    <label>
+        Type:
+        <select id="lesson_type" name="type" th:field="*{type}">
+            <option selected value="All">All</option>
+            <option value="Individual">Individual</option>
+            <option value="Ensemble">Ensemble</option>
+            <option value="Group">Group</option>
+        </select>
+    </label>
+    <label>
+        Level:
+        <select id="lesson_level" name="level" th:field="*{level}">
+            <option selected value="All">All</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+    </label>
+    <label>
+        Genre:
+        <select id="lesson_genre" name="genre" th:field="*{genre}">
+            <option selected value="N/A">N/A</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Punk">Punk</option>
+            <option value="Rock">Rock</option>
+        </select>
+    </label>
+    <button type="submit">Filter</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <td>Date</td>
+        <td>Time</td>
+        <td>Type</td>
+        <td>Level</td>
+        <td>Instrument</td>
+        <td>Genre</td>
+        <td>Book</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="lesson : ${lessons}">
+        <td th:text="${lesson.getFrom()}"></td>
+        <td th:text="${lesson.getTime()}"></td>
+        <td th:text="${lesson.getType()}"></td>
+        <td th:text="${lesson.getLevel()}"></td>
+        <td th:text="${lesson.getInstrument()}"></td>
+        <td th:text="${lesson.getGenre()}"></td>
+        <td>
+            <button type="button">
+                <a th:href="@{bookings/new(lesson=${lesson.getId()},student=1)}">Book lesson</a>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -20,7 +20,12 @@ public class ProfileService {
     public List<Person> findAll() {
         List<Person> people = profileRepository.findAll();
         return people.stream()
-                .sorted(Comparator.comparing(Person::getAge))
+                .sorted(Comparator.comparing(Person::getlName))
                 .collect(Collectors.toList());
+    }
+
+    public Person findOneById(Long id) {
+        return profileRepository.findOneById(id);
+
     }
 }

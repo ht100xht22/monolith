@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Bookings</title>
+</head>
+<body>
+<section>
+    <h1>Bookings list</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>Date</td>
+            <td>Time</td>
+            <td>Type</td>
+            <td>Level</td>
+            <td>Instrument</td>
+            <td>Booked by</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="booking : ${bookings}">
+            <td th:text="${booking?.getLesson()?.getFrom()}">Date</td>
+            <td th:text="${booking?.getLesson()?.getTime()}">Time</td>
+            <td th:text="${booking?.getLesson()?.getType()}">Type</td>
+            <td th:text="${booking?.getLesson()?.getLevel()}">Level</td>
+            <td th:text="${booking?.getLesson()?.getInstrument()}">Instrument</td>
+            <td th:text="${booking?.getPerson()?.getName()}">Booked by</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
