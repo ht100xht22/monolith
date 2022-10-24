@@ -32,7 +32,8 @@
         <td th:text="${instruments.getPrice}"></td>
 
         <td>
-            <button name="rent"> Rent</button>
+            <button name="rent"><a th:href="@{rents/new(instruments=${instruments.getId()},student=1)}"> Rent</a>
+            </button>
         </td>
 
     </tr>
