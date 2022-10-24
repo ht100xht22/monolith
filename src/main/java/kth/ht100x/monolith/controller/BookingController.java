@@ -23,7 +23,7 @@ public class BookingController {
 
     @GetMapping(path = "")
     public String bookings(Model model) {
-        List<Booking> bookings =  bookingService.findAll();
+        List<Booking> bookings = bookingService.findAll();
         model.addAttribute("bookings", bookings);
         return "pages/bookings/bookings";
     }
