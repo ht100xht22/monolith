@@ -17,6 +17,14 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    public Person() {
+        this.id = 0;
+        this.fName = null;
+        this.lName = null;
+        this.email = null;
+        this.phoneNumber = null;
+    }
+
     public int getId() {
         return id;
     }

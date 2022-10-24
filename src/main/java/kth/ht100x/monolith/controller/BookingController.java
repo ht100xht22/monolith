@@ -1,8 +1,10 @@
 package kth.ht100x.monolith.controller;
 
 import kth.ht100x.monolith.model.Booking;
+import kth.ht100x.monolith.model.Instructor;
 import kth.ht100x.monolith.model.Lesson;
 import kth.ht100x.monolith.model.Person;
+import kth.ht100x.monolith.model.form.BookingUpdateForm;
 import kth.ht100x.monolith.service.BookingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,28 @@ public class BookingController {
         List<Booking> bookings = bookingService.findAll();
         model.addAttribute("bookings", bookings);
         return "pages/bookings/bookings";
+    }
+
+    @GetMapping(path = "/{id}")
+    public String booking(Model model, @PathVariable(name = "id") Long bookingId) {
+        Booking booking = bookingService.findOneById(bookingId);
+        List<Instructor> instructors = bookingService.findAllInstructors();
+        model.addAttribute("booking", booking);
+        model.addAttribute("instructors", instructors);
+        BookingUpdateForm form = new BookingUpdateForm(booking.getInstructor().getId());
+        model.addAttribute("form", form);
+        return "pages/bookings/booking";
+    }
+
+    @PostMapping(path = "/{id}")
+    public String update(Model model, @PathVariable(name = "id") Long bookingId, @ModelAttribute(value = "form") BookingUpdateForm form) {
+        Booking booking = bookingService.findOneById(bookingId);
+        bookingService.update(booking, form);
+        List<Instructor> instructors = bookingService.findAllInstructors();
+        model.addAttribute("booking", booking);
+        model.addAttribute("instructors", instructors);
+        model.addAttribute("form", form);
+        return "pages/bookings/booking";
     }
 
     @GetMapping("/new")
