@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"
+          xmlns:th="http://www.thymeleaf.org">
+    <title>Instruments</title>
+</head>
+<body>
+<a href="/">Home</a>
+<form action="#" method="post" th:action="@{''}" th:object="${form}">
+    <label>
+        Instrument:
+        <input name="type" th:field="*{type}" type="text">
+    </label>
+    <button type="submit">Filter</button>
+</form>
+
+<table>
+    <thead>
+    <tr>
+        <td>Type</td>
+        <td>Brand</td>
+        <td>Price</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="instruments : ${instruments}">
+        <td th:text="${instruments.getType()}"></td>
+        <td th:text="${instruments.getBrand}"></td>
+        <td th:text="${instruments.getPrice}"></td>
+        <td>
+            <button name="rent"><a th:href="@{rents/new(instruments=${instruments.getId()},student=1)}"> Rent</a>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

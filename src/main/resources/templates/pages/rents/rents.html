@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rents</title>
+</head>
+<body>
+<section>
+    <a href="/">Home</a>
+    <h1>List rented instruments</h1>
+    <table>
+        <thead>
+        <tr>
+
+            <td>Instrument type</td>
+            <td>Brand</td>
+            <td>Booked by</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="rent : ${rents}">
+            <td th:text="${rent.getInstruments().getType()}"></td>
+            <td th:text="${rent.getInstruments().getBrand()}"></td>
+            <td th:text="${rent.getPerson().getName()}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

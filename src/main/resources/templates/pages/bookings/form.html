@@ -7,47 +7,48 @@
 </head>
 <body>
 <section id="content">
+    <a href="/">Home</a>
     <h1>Booking lesson</h1>
-    <form action="#" th:action="@{''}" th:object="${form}" method="post">
+    <form action="#" method="post" th:action="@{''}" th:object="${form}">
         <div id="lesson">
             <h2>Lesson information</h2>
             <label>
                 Date:
-                <input type="date" th:value="${lesson.getFrom()}" readonly/>
+                <input readonly th:value="${lesson.getFrom()}" type="date"/>
             </label>
             <label>
                 Time:
-                <input type="time" th:value="${lesson.getTime()}" readonly/>
+                <input readonly th:value="${lesson.getTime()}" type="time"/>
             </label>
             <label>
                 Type:
-                <input type="text" th:value="${lesson.getType()}" readonly/>
+                <input readonly th:value="${lesson.getType()}" type="text"/>
             </label>
             <label>
                 Level:
-                <input type="text" th:value="${lesson.getLevel()}" readonly/>
+                <input readonly th:value="${lesson.getLevel()}" type="text"/>
             </label>
             <label>
-                <input type="text" th:value="${lesson?.getInstrument()}" readonly/>
+                <input readonly th:value="${lesson?.getInstrument()}" type="text"/>
             </label>
             <label>
                 Genre:
-                <input type="text" th:value="${lesson?.getGenre()}" readonly/>
+                <input readonly th:value="${lesson?.getGenre()}" type="text"/>
             </label>
         </div>
         <div id="student">
             <h2>Student information</h2>
             <label>
                 Name:
-                <input type="text" th:value="${person.getName()}" readonly/>
+                <input readonly th:value="${person.getName()}" type="text"/>
             </label>
             <label>
                 Email:
-                <input type="text" th:value="${person.getEmail()}" readonly/>
+                <input readonly th:value="${person.getEmail()}" type="text"/>
             </label>
             <label>
                 Phone number:
-                <input type="tel" th:value="${person.getPhoneNumber()}" readonly/>
+                <input readonly th:value="${person.getPhoneNumber()}" type="tel"/>
             </label>
         </div>
         <button type="submit">Submit booking</button>

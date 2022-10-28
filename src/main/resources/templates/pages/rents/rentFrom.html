@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Rent form</title>
+</head>
+<body>
+<a href="/">Home</a>
+<section id="content">
+    <h1>Rent instrument</h1>
+    <form action="#" method="post" th:action="@{''}" th:object="${form}">
+        <div id="instrument">
+            <h2>Instrument information</h2>
+            <label>
+                Type:
+                <input readonly th:value="${instrumens.getType()}" type="text"/>
+            </label>
+            <label>
+                Brand:
+                <input readonly th:value="${instrumens.getBrand()}" type="text"/>
+            </label>
+
+        </div>
+        <div id="student">
+            <h2>Student information</h2>
+            <label>
+                Name:
+                <input readonly th:value="${person.getName()}" type="text"/>
+            </label>
+            <label>
+                Email:
+                <input readonly th:value="${person.getEmail()}" type="text"/>
+            </label>
+            <label>
+                Phone number:
+                <input readonly th:value="${person.getPhoneNumber()}" type="tel"/>
+            </label>
+        </div>
+        <button type="submit">Submit rent</button>
+    </form>
+</section>
+</body>
+</html>
