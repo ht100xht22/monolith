@@ -7,17 +7,18 @@
 </head>
 <body>
 
+<a href="/">Home</a>
 <h1>Lessons</h1>
 
-<form action="#" th:action="@{''}" th:object="${form}" method="post">
+<form action="#" method="post" th:action="@{''}" th:object="${form}">
 
     <label>
         From:
-        <input type="date" name="from" th:field="*{from}"/>
+        <input name="from" th:field="*{from}" type="date"/>
     </label>
     <label>
         To:
-        <input type="date" name="to" th:field="*{to}"/>
+        <input name="to" th:field="*{to}" type="date"/>
     </label>
     <label>
         Type:
