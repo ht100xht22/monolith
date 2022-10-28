@@ -29,7 +29,7 @@ public class Instruments {
         this.status = instruments.getStatus();
         this.rentedByWho = name;
     }
-
+    
     public int getId() {
         return id;
     }

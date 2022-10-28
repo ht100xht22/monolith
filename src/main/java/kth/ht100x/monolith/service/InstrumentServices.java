@@ -55,5 +55,4 @@ public class InstrumentServices {
     private Person findStudentById(Long studentId) {
         return profileService.findOneById(studentId);
     }
-
 }

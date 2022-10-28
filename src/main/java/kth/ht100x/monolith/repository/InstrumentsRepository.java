@@ -29,8 +29,6 @@ public class InstrumentsRepository {
 
     public Instruments findOneById(int instrumentID) {
         return instruments.stream().filter(instruments -> instruments.getId() == instrumentID).findFirst().get();
-
-
     }
 
     public void save(Instruments instrument) {
