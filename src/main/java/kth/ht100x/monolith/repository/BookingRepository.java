@@ -21,6 +21,19 @@ public class BookingRepository {
     }
 
     public void save(Lesson lesson, Person person) {
-        bookings.add(new Booking(lesson, person));
+        Long id = (long) bookings.size();
+        bookings.add(new Booking(id, lesson, person));
+    }
+
+    public Booking findOneById(Long bookingId) {
+        return bookings.stream()
+                .filter(booking -> booking.getId().equals(bookingId))
+                .findFirst()
+                .get();
+    }
+
+    public void update(Booking entry) {
+        bookings.removeIf(booking -> booking.getId().equals(entry.getId()));
+        bookings.add(entry);
     }
 }
