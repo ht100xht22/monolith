@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+</head>
+<body>
+<section id="content">
+    <h1>Booking content</h1>
+    <div id="student_profile">
+        <h2>Student profile</h2>
+        <p th:text="${booking.getPerson().getName()}"></p>
+        <p th:text="${booking.getPerson().getEmail()}"></p>
+        <p th:text="${booking.getPerson().getPhoneNumber()}"></p>
+    </div>
+    <div id="booking_information">
+        <h2>Booking information</h2>
+        <div id="lesson_information">
+            <h3>Lesson information</h3>
+            <p th:text="'From:'+ ${booking.getLesson().getFrom()}"></p>
+            <p th:text="'Time:'+ ${booking.getLesson().getTime()}"></p>
+            <p th:text="'Instrument:'+ ${booking.getLesson().getInstrument()}"></p>
+            <p th:text="'Level:'+ ${booking.getLesson().getLevel()}"></p>
+            <p th:text="'Type:'+ ${booking.getLesson().getType()}"></p>
+            <p th:text="'Genre:'+ ${booking.getLesson().getGenre()}"></p>
+        </div>
+        <div id="instructor_information">
+            <h3>Instructor information</h3>
+            <form action="#" method="post" th:action="@{''}" th:object="${form}">
+                <label>
+                    Instructor:
+                    <select id="instructor" name="instructor"
+                            th:field="*{instructorId}">
+                        <option th:value="0" value="N/A"></option>
+                        <option th:each="instructor : ${instructors}"
+                                th:text="${instructor.getName()}"
+                                th:value="${instructor.getId()}"></option>
+                    </select>
+                </label>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>
