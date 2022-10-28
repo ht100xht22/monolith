@@ -1,4 +1,4 @@
-package kth.ht100x.monolith.model.from;
+package kth.ht100x.monolith.model.form;
 
 import kth.ht100x.monolith.model.Instruments;
 

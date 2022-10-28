@@ -2,7 +2,7 @@ package kth.ht100x.monolith.service;
 
 import kth.ht100x.monolith.model.Instruments;
 import kth.ht100x.monolith.model.Person;
-import kth.ht100x.monolith.model.from.InstrumentFilterFrom;
+import kth.ht100x.monolith.model.form.InstrumentFilterFrom;
 import kth.ht100x.monolith.repository.InstrumentsRepository;
 import kth.ht100x.monolith.repository.RentRepository;
 import org.springframework.stereotype.Service;
