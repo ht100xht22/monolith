@@ -1,7 +1,7 @@
 package kth.ht100x.monolith.controller;
 
 import kth.ht100x.monolith.model.Instruments;
-import kth.ht100x.monolith.model.from.InstrumentFilterFrom;
+import kth.ht100x.monolith.model.form.InstrumentFilterFrom;
 import kth.ht100x.monolith.service.InstrumentServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

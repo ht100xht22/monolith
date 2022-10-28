@@ -20,6 +20,16 @@ public class Instruments {
         this.rentedByWho = rentedByWho;
     }
 
+    public Instruments(Instruments instruments, String name) {
+        this.id = instruments.getId();
+        this.type = instruments.getType();
+        this.brand = instruments.getBrand();
+        this.date = instruments.getDate();
+        this.price = instruments.getPrice();
+        this.status = instruments.getStatus();
+        this.rentedByWho = name;
+    }
+    
     public int getId() {
         return id;
     }
